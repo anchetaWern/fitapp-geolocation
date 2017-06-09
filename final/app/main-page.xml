@@ -1,0 +1,20 @@
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:maps="nativescript-google-maps-sdk"
+    navigatingTo="onNavigatingTo" 
+    class="page">
+   
+    <Page.actionBar>
+        <ActionBar title="FitApp" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+  
+    <StackLayout class="p-20">
+        <Button text="{{ getButtonLabel() }}" tap="{{ toggleTracking }}" class="{{ getButtonStyle() }}"/>
+        <Label text="{{ distance }}" class="h2 text-center" textWrap="true"/>
+        <Label text="{{ steps }}" class="h2 text-center" textWrap="true"/>
+    
+        <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" zoom="{{ zoom }}" mapReady="{{ onMapReady }}" />
+    </StackLayout>
+
+</Page>
